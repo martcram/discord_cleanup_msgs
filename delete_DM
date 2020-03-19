@@ -1,0 +1,45 @@
+#!/bin/bash
+
+SPEED=0.1 
+
+echo "How many messages do you want to remove?"
+read numMsgs
+
+until [[ $activeWindow == *"Discord"* ]]; do
+    sleep 1
+    activeWindow="$(xdotool getactivewindow getwindowname)"
+done
+
+windowID="$(xdotool getactivewindow)"
+channelName="$(echo $activeWindow | cut -d' ' -f1)"
+echo "Removing your DM history on the $channelName channel ..."
+
+counter=0
+for ((i=0; i<numMsgs; i++)); do
+    xdotool key Return
+    sleep $SPEED
+    xdotool key Up 
+    sleep $SPEED
+    xdotool key ctrl+a
+    sleep $SPEED
+    xdotool key BackSpace
+    sleep $SPEED
+    xdotool key Return
+    sleep $SPEED
+    xdotool key Return
+    sleep $SPEED
+    xdotool key Page_Up
+    sleep $SPEED
+    xdotool key BackSpace
+    sleep $SPEED
+
+    if [[ "$(xdotool getactivewindow getwindowname)" != *"Discord"* ]]; then
+        echo "Process interupted!"
+        break
+    fi
+
+    let "counter+=1"
+    echo -ne "Progress: $counter messages removed sofar\r"
+done
+
+echo -e "\nDone. $counter messages removed"
