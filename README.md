@@ -15,9 +15,7 @@ $ sudo apt install xdotool
 * xdotool 3.20160805.1
 
 ### Authors:
-* Martijn Cramer
-
-See also the list of [contributors](https://github.com/MartijnCramer/discord_delete_msgs/contributors) who participated in this project.
+See the list of [contributors](https://github.com/MartijnCramer/discord_delete_msgs/contributors) who participated in this project.
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more details.
