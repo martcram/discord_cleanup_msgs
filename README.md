@@ -1,5 +1,5 @@
 ## Delete Discord message history
-A simple shell script to automatically delete your message history on Discord.
+A simple shell script to automatically delete your message history on Discord. This software **doesn't use self-bots** which is labelled by Discord as a [violation of its terms](https://support.discordapp.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-) and can result in terminating your account. Instead, the manual process of deleting messages by a physical user is mimicked by simulating mouse and keyboard inputs.
 
 ### Getting started
 These instructions will get you a copy of this project up and running on your local machine for usage, development or testing purposes.
